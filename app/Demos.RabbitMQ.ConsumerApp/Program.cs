@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Text;
 using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+using static System.Console;
 
-namespace Demos.RabbitMQ.Client
+namespace Demos.RabbitMQ.ConsumerApp
 {
     class Program
     {
@@ -10,7 +12,7 @@ namespace Demos.RabbitMQ.Client
         {
             var factory = new ConnectionFactory()
             {
-                HostName = "localhost" ,
+                HostName = "localhost",
                 UserName = "rabbitmq",
                 Password = "rabbitmq",
                 Port = 5672
@@ -27,21 +29,23 @@ namespace Demos.RabbitMQ.Client
                 arguments: null
             );
 
-            const string message = "Hello World!";
+            var consumer = new EventingBasicConsumer(channel);
+            consumer.Received += (model, ea) =>
+            {
+                var body = ea.Body;
+                var message = Encoding.UTF8.GetString(body);
+                Console.WriteLine(" [x] Received {0}", message);
+            };
 
-            var body = Encoding.UTF8.GetBytes(message);
-
-            channel.BasicPublish(
-                exchange: "",
-                routingKey: "hello",
-                basicProperties: null,
-                body: body
+            channel.BasicConsume(
+                queue: "hello",
+                autoAck: true,
+                consumer: consumer
             );
 
-            Console.WriteLine(" [x] Sent {0}", message);
+            WriteLine("Start listening.");
 
-            Console.WriteLine(" Press [enter] to exit.");
-            Console.ReadLine();
+            ReadKey();
         }
     }
 }
