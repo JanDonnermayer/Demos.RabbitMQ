@@ -9,10 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos.RabbitMQ.ConsumerApp"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos.RabbitMQ.PublisherApp", "app\Demos.RabbitMQ.PublisherApp\Demos.RabbitMQ.PublisherApp.csproj", "{DE4DF234-622B-4EDD-80FE-4E429E903C84}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C1F41691-F02A-4A1F-8FF6-7B7C8554DFB3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos.RabbitMQ.Client", "src\Demos.RabbitMQ.Client\Demos.RabbitMQ.Client.csproj", "{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,22 +46,9 @@ Global
 		{DE4DF234-622B-4EDD-80FE-4E429E903C84}.Release|x64.Build.0 = Release|Any CPU
 		{DE4DF234-622B-4EDD-80FE-4E429E903C84}.Release|x86.ActiveCfg = Release|Any CPU
 		{DE4DF234-622B-4EDD-80FE-4E429E903C84}.Release|x86.Build.0 = Release|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Debug|x64.Build.0 = Debug|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Debug|x86.Build.0 = Debug|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Release|x64.ActiveCfg = Release|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Release|x64.Build.0 = Release|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Release|x86.ActiveCfg = Release|Any CPU
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{113F51C9-D9F5-4874-8DBC-A752B99B3629} = {BA4E0874-6615-4B6D-882B-9CAD75ECF116}
 		{DE4DF234-622B-4EDD-80FE-4E429E903C84} = {BA4E0874-6615-4B6D-882B-9CAD75ECF116}
-		{5E74E9DE-A23B-49D1-A5D2-3EF856C691A7} = {C1F41691-F02A-4A1F-8FF6-7B7C8554DFB3}
 	EndGlobalSection
 EndGlobal
