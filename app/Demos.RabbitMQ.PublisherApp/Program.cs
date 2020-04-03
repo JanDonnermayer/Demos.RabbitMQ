@@ -28,7 +28,7 @@ namespace Demos.RabbitMQ.PublisherApp
                 arguments: null
             );
 
-            byte[] GetBytes(string message) =>
+            static byte[] GetBytes(string message) =>
                 Encoding.UTF8.GetBytes(message);
 
             WriteLine("Please enter messages!");
