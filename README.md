@@ -1,6 +1,6 @@
 # Demos.RabbitMQ
 
-A simple example on how different agents can communicate using RabbitMQ and Docker.
+A simple example on how different agents can communicate using [RabbitMQ](https://www.rabbitmq.com/) and [Docker](https://www.docker.com/).
 
 ## Setup
 
