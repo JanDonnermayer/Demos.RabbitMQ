@@ -20,3 +20,5 @@ dotnet run "app\AzureDemos.SignalR.PublisherApp"
 ```powershell
 dotnet run "app\AzureDemos.SignalR.ConsumerApp"
 ```
+
+RabbitMQ has a [management GUI](http://localhost:15672/#/)
