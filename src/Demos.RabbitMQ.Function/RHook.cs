@@ -14,12 +14,14 @@ namespace Demos.RabbitMQ.Function
 {
     public static class RabbitHook
     {
-        [FunctionName("RabbitHook")]
+        [FunctionName("RHook")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "RHook/{queue}/{routingKey}")] HttpRequest req,
+            string queue,
+            string routingKey,
+            ILogger logger)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var factory = new ConnectionFactory()
             {
@@ -33,7 +35,7 @@ namespace Demos.RabbitMQ.Function
             using var channel = connection.CreateModel();
 
             channel.QueueDeclare(
-                queue: "syncservice",
+                queue: queue,
                 durable: false,
                 exclusive: false,
                 autoDelete: false,
@@ -45,14 +47,12 @@ namespace Demos.RabbitMQ.Function
 
             channel.BasicPublish(
                 exchange: "",
-                routingKey: "syncservice",
+                routingKey: routingKey,
                 basicProperties: null,
-                body: GetBytes("Test")
+                body: GetBytes("Hello!")
             );
 
-            return name != null
-                ? (ActionResult)new OkObjectResult($"Hello, {name}")
-                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
+            return new OkResult();
         }
     }
 }
