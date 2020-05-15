@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Text;
 
-namespace Demos.RabbitMQ.Function
+namespace Demos.RabbitMQ.PublisherFunction
 {
     public static class RabbitHook
     {
@@ -22,6 +22,10 @@ namespace Demos.RabbitMQ.Function
             ILogger logger)
         {
             logger.LogInformation("C# HTTP trigger function processed a request.");
+
+            var body = await req.Body
+                .ReadAllTextAsync()
+                .ConfigureAwait(false);
 
             var factory = new ConnectionFactory()
             {
@@ -49,7 +53,7 @@ namespace Demos.RabbitMQ.Function
                 exchange: "",
                 routingKey: routingKey,
                 basicProperties: null,
-                body: GetBytes("Hello!")
+                body: GetBytes(body)
             );
 
             return new OkResult();

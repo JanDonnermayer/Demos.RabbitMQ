@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos.RabbitMQ.PublisherApp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BB0B4F54-BDA8-4985-999F-7670B4D94C0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos_RabbitMQ_Function", "src\Demos.RabbitMQ.Function\Demos_RabbitMQ_Function.csproj", "{625FE43F-C87F-4DB9-9952-3B10BE472F8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos.RabbitMQ.PublisherFunction", "src\Demos.RabbitMQ.PublisherFunction\Demos.RabbitMQ.PublisherFunction.csproj", "{625FE43F-C87F-4DB9-9952-3B10BE472F8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
