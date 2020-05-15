@@ -22,7 +22,7 @@ namespace Demos.RabbitMQ.ConsumerApp
             using var channel = connection.CreateModel();
 
             channel.QueueDeclare(
-                queue: "hello",
+                queue: "syncservice",
                 durable: false,
                 exclusive: false,
                 autoDelete: false,
@@ -38,7 +38,7 @@ namespace Demos.RabbitMQ.ConsumerApp
             };
 
             channel.BasicConsume(
-                queue: "hello",
+                queue: "syncservice",
                 autoAck: true,
                 consumer: consumer
             );
