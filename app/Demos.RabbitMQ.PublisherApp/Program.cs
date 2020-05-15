@@ -21,7 +21,7 @@ namespace Demos.RabbitMQ.PublisherApp
             using var channel = connection.CreateModel();
 
             channel.QueueDeclare(
-                queue: "hello",
+                queue: "syncservice",
                 durable: false,
                 exclusive: false,
                 autoDelete: false,
@@ -37,7 +37,7 @@ namespace Demos.RabbitMQ.PublisherApp
             {
                 channel.BasicPublish(
                     exchange: "",
-                    routingKey: "hello",
+                    routingKey: "syncservice",
                     basicProperties: null,
                     body: GetBytes(ReadLine())
                 );
