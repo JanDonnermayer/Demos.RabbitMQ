@@ -10,6 +10,6 @@ func start
 
 ```powershell
 $endpoint = "http://localhost:7071/api/RHook/<QueueName>/<RoutingKey>"
-$body = "Hello"
+$body = "<message>"
 Invoke-WebRequest -Uri $endpoint -Method "POST" -Body $body
 ```
