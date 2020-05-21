@@ -14,11 +14,11 @@ docker-compose  up -d --build
 Run the apps:
 
 ```powershell
-dotnet run "app\AzureDemos.SignalR.PublisherApp"
+dotnet run "app\Demos.RabbitMQ.PublisherApp"
 ```
 
 ```powershell
-dotnet run "app\AzureDemos.SignalR.ConsumerApp"
+dotnet run "app\Demos.RabbitMQ.ConsumerApp"
 ```
 
 RabbitMQ has a [management GUI](http://localhost:15672/#/)
